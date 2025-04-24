@@ -164,7 +164,7 @@
 
         <!-- メインコンテンツエリア -->
         <div class="content">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/7/71/Minecraft_logo.svg" alt="Minecraft Logo" class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Minecraft_logo.svg/600px-Minecraft_logo.svg.png" alt="Minecraft Logo" class="logo">
 
             <div class="launcher-header">Eaglercraft Launcher</div>
 
@@ -173,6 +173,7 @@
                 <option value="1.12.2">Eaglercraft 1.12.2</option>
                 <option value="1.8.8">Eaglercraft 1.8.8</option>
                 <option value="1.5.2">Eaglercraft 1.5.2</option>
+                <option value="b1.7.3">Eaglercraft Beta 1.7.3</option> <!-- 新しいバージョン追加 -->
             </select>
 
             <!-- プレイボタン -->
@@ -195,6 +196,9 @@
                     break;
                 case "1.5.2":
                     url = "https://eaglercraft.com/mc/1.5.2";
+                    break;
+                case "b1.7.3": // 新しいバージョンのURL
+                    url = "https://eaglercraft.com/mc/b1.7.3";
                     break;
             }
 
