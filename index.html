@@ -1,28 +1,83 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>Minecraft Launcher - Eaglercraft</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eaglercraft Launcher</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #111;
+            color: white;
+        }
+        h1 {
+            margin-top: 20px;
+        }
+        select {
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #008CBA;
+            color: white;
+            padding: 12px 24px;
+            font-size: 18px;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #005f73;
+        }
+        .background {
+            background-image: url('https://static.planetminecraft.com/files/resource_media/screenshot/1535/minecraft-1-16-update-image-26492.jpg'); /* Minecraft 1.16アップデートの背景画像URL */
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
-  <div class="launcher-container">
-    <div class="launcher-header">
-      <h1>Eaglercraft Launcher</h1>
-    </div>
-    
-    <div class="version-select">
-      <label for="version">バージョンを選択:</label>
-      <select id="version">
-        <option value="1.12.2">1.12.2</option>
-        <option value="1.8.8">1.8.8</option>
-        <option value="1.5.2">1.5.2</option>
-      </select>
+
+    <div class="background">
+        <h1>Eaglercraft Launcher</h1>
+
+        <!-- バージョン選択 -->
+        <select id="version" name="version">
+            <option value="1.12.2">Eaglercraft 1.12.2</option>
+            <option value="1.8.8">Eaglercraft 1.8.8</option>
+            <option value="1.5.2">Eaglercraft 1.5.2</option>
+        </select>
+
+        <!-- プレイボタン -->
+        <br>
+        <button onclick="play()">Play</button>
     </div>
 
-    <button class="play-button" onclick="play()">▶ Play</button>
-  </div>
+    <script>
+        function play() {
+            const version = document.getElementById("version").value;
+            let url = "";
 
-  <script src="script.js"></script>
+            // 選択したバージョンに対応するURLにジャンプ
+            switch (version) {
+                case "1.12.2":
+                    url = "https://eaglercraft.com/mc/1.12.2";
+                    break;
+                case "1.8.8":
+                    url = "https://eaglercraft.com/mc/1.8.8";
+                    break;
+                case "1.5.2":
+                    url = "https://eaglercraft.com/mc/1.5.2";
+                    break;
+            }
+
+            window.location.href = url; // URLにジャンプ
+        }
+    </script>
+
 </body>
 </html>
